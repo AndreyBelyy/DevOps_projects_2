@@ -16,13 +16,13 @@
    - sudo systemctl enable docker
    - sudo docker --version
    - sudo docker run hello-world
-4. Open the “Swarm Manager” node and run the command “sudo docker swarm init”. This will be creating empty swarm
-5. After initializing the swarm on the “swarm-manager” node, there will be one key generated to add other nodes into the swarm as a worker. Copy and run that key on the rest of the servers with sudo priviliges
+4. Open the “Swarm Manager” node and run the command “sudo docker swarm init”. This will be creating an empty swarm
+5. After initializing the swarm on the “swarm-manager” node, there will be one key generated to add other nodes into the swarm as a worker. Copy and run that key on the rest of the servers with sudo privileges
 6. Check the nodes on Swarm-manager: "sudo docker node ls"
 7. On Manager Node we will create a service: “sudo docker service create --name django-app-service –replicas 3 --publish 8001:8001 trainwithshubham/react-django-app:latest”
 8. Run: “sudo docker service ls"
 9. Check container: "sudo docker ps"
-10. This service will be running on all three nodes. To check this, just grab the Ip Address of any of the nodes followed by port 8001. As <ip_of_3_ec2>:8001
+10. This service will be running on all three nodes. To check this, grab the Ip address of any nodes followed by port 8001. As <ip_of_3_ec2>:8001
 11. If you want to remove any node from the environment, just run:
     - sudo docker swarm leave
 
